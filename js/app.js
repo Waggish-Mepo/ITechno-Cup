@@ -1,19 +1,31 @@
 const dateSelect = $('#date-select');
 let dataVaccine;
 let dateVacc = [];
-const Vaccinated1 = {lansia: [], pp: [], sdmk: []};
-const vacDateChart = $('#vacc-date-chart');
+const Vaccinated = {vaksinasi1: [], vaksinasi2: []};
 
-let vaccDateStatistic = new Chart(vacDateChart, {
+const maxCanvasWidth = window.matchMedia("(max-width: 700px)");
+
+function responsiveCanvas(width) {
+    if (width.matches) {
+        $('#vacc-chart').attr('height', 500);
+    } else {
+        $('#vacc-chart').attr('height', 100);
+    }
+}
+
+responsiveCanvas(maxCanvasWidth);
+maxCanvasWidth.addListener(responsiveCanvas);
+
+let vaccDateStatistic = new Chart($('#vacc-date-chart'), {
     type: 'doughnut',
     data: {
-        labels: ['Lanjut Usia Tahap 1', 'Lanjut Usia Tahap 2', 'Pekerja Publik Tahap 1', 'Pekerja Publik Tahap 2', 'SDM Kesehatan Tahap 1', 'SDM Kesehatan Tahap 2'],
+        labels: ['Lanjut Usia Tahap 1', 'Pekerja Publik Tahap 1', 'SDM Kesehatan Tahap 1', ],
         datasets: [
             {
                 label: '1',
                 data: [],
-                borderColor: ['rgba(255, 100, 0, 0.4)', 'rgba(0, 0, 255, 0.4)', 'rgba(255, 100, 0, 0.4)', 'rgba(0, 0, 255, 0.4)', 'rgba(150, 255, 0, 0.4)', 'rgba(150, 255, 0, 0.4)'],
-                backgroundColor: ['rgba(255, 100, 0, 0.4)', 'rgba(0, 0, 255, 0.4)', 'rgba(255, 100, 0, 0.4)', 'rgba(0, 0, 255, 0.4)', 'rgba(150, 255, 0, 0.4)', 'rgba(150, 255, 0, 0.4)'],
+                borderColor: ['rgba(255, 100, 0, 0.4)', 'rgba(255, 100, 0, 0.4)', 'rgba(150, 255, 0, 0.4)',],
+                backgroundColor: ['rgba(255, 100, 0, 0.4)', 'rgba(255, 100, 0, 0.4)', 'rgba(150, 255, 0, 0.4)', ],
             },
         ]
     },
@@ -25,7 +37,36 @@ let vaccDateStatistic = new Chart(vacDateChart, {
             },
             title: {
             display: true,
-            text: 'Total sudah vaksin tahap 1 & 2'
+            text: 'Total sudah vaksin tahap 1'
+            }
+        }
+    },
+    responsive: true
+    }
+);
+
+let vaccDateStatistic2 = new Chart($('#vacc-date-chart2'), {
+    type: 'doughnut',
+    data: {
+        labels: ['Lanjut Usia Tahap 2', 'Pekerja Publik Tahap 2', 'SDM Kesehatan Tahap 2'],
+        datasets: [
+            {
+                label: '1',
+                data: [],
+                borderColor: ['rgba(0, 0, 255, 0.4)', 'rgba(0, 0, 255, 0.4)', 'rgba(150, 255, 0, 0.4)'],
+                backgroundColor: ['rgba(0, 0, 255, 0.4)', 'rgba(0, 0, 255, 0.4)', 'rgba(150, 255, 0, 0.4)'],
+            },
+        ]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+            position: 'top',
+            },
+            title: {
+            display: true,
+            text: 'Total sudah vaksin tahap 2'
             }
         }
     },
@@ -43,9 +84,15 @@ let vaccDateStatistic = new Chart(vacDateChart, {
             dateSelect.append(`<option value="${data['date']}">${data['date']}</option>`);
 
             dateVacc.push(data['date']);
-            Vaccinated1.lansia.push(data['tahapan_vaksinasi']['lansia']['sudah_vaksin1']);
-            Vaccinated1.pp.push(data['tahapan_vaksinasi']['petugas_publik']['sudah_vaksin1']);
-            Vaccinated1.sdmk.push(data['tahapan_vaksinasi']['sdm_kesehatan']['sudah_vaksin1']);
+            // Vaccinated1.lansia.push(data['tahapan_vaksinasi']['lansia']['sudah_vaksin1']);
+            // Vaccinated1.pp.push(data['tahapan_vaksinasi']['petugas_publik']['sudah_vaksin1']);
+            // Vaccinated1.sdmk.push(data['tahapan_vaksinasi']['sdm_kesehatan']['sudah_vaksin1']);
+
+            // Vaccinated2.lansia.push(data['tahapan_vaksinasi']['lansia']['sudah_vaksin2']);
+            // Vaccinated2.pp.push(data['tahapan_vaksinasi']['petugas_publik']['sudah_vaksin2']);
+            // Vaccinated2.sdmk.push(data['tahapan_vaksinasi']['sdm_kesehatan']['sudah_vaksin2']);
+            Vaccinated.vaksinasi1.push(data['vaksinasi1']);
+            Vaccinated.vaksinasi2.push(data['vaksinasi2']);
         });
 
         let options = $('select#date-select option');
@@ -80,20 +127,51 @@ let vaccDateStatistic = new Chart(vacDateChart, {
                 $('#vaccine-medic-worker2').html(data['tahapan_vaksinasi']['sdm_kesehatan']['sudah_vaksin2']);
 
                 vaccDateStatistic.data.datasets[0].data[0] = data['tahapan_vaksinasi']['lansia']['sudah_vaksin1'];
-                vaccDateStatistic.data.datasets[0].data[1] = data['tahapan_vaksinasi']['lansia']['sudah_vaksin2'];
-                vaccDateStatistic.data.datasets[0].data[2] = data['tahapan_vaksinasi']['petugas_publik']['sudah_vaksin1'];
-                vaccDateStatistic.data.datasets[0].data[3] = data['tahapan_vaksinasi']['petugas_publik']['sudah_vaksin2'];
-                vaccDateStatistic.data.datasets[0].data[4] = data['tahapan_vaksinasi']['sdm_kesehatan']['sudah_vaksin1'];
-                vaccDateStatistic.data.datasets[0].data[5] = data['tahapan_vaksinasi']['sdm_kesehatan']['sudah_vaksin2'];
+                vaccDateStatistic2.data.datasets[0].data[0] = data['tahapan_vaksinasi']['lansia']['sudah_vaksin2'];
+                vaccDateStatistic.data.datasets[0].data[1] = data['tahapan_vaksinasi']['petugas_publik']['sudah_vaksin1'];
+                vaccDateStatistic2.data.datasets[0].data[1] = data['tahapan_vaksinasi']['petugas_publik']['sudah_vaksin2'];
+                vaccDateStatistic.data.datasets[0].data[2] = data['tahapan_vaksinasi']['sdm_kesehatan']['sudah_vaksin1'];
+                vaccDateStatistic2.data.datasets[0].data[2] = data['tahapan_vaksinasi']['sdm_kesehatan']['sudah_vaksin2'];
                 vaccDateStatistic.update();
+                vaccDateStatistic2.update();
             }
         });
     }
 
     async function chartData() {
         await getData();
-        console.log(Vaccinated1);
         const vacChart = $('#vacc-chart');
+        const totalDuration = 8000;
+        const delayBetweenPoints = totalDuration / Vaccinated.vaksinasi1.length;
+        const previousY = (ctx) => ctx.index === 0 ? ctx.chart.scales.y.getPixelForValue(100) : ctx.chart.getDatasetMeta(ctx.datasetIndex).data[ctx.index - 1].getProps(['y'], true).y;
+        const animation = {
+            x: {
+                type: 'number',
+                easing: 'linear',
+                duration: delayBetweenPoints,
+                from: NaN, // the point is initially skipped
+                delay(ctx) {
+                if (ctx.type !== 'data' || ctx.xStarted) {
+                    return 0;
+                }
+                ctx.xStarted = true;
+                return ctx.index * delayBetweenPoints;
+                }
+            },
+            y: {
+                type: 'number',
+                easing: 'linear',
+                duration: delayBetweenPoints,
+                from: previousY,
+                delay(ctx) {
+                if (ctx.type !== 'data' || ctx.yStarted) {
+                    return 0;
+                }
+                ctx.yStarted = true;
+                return ctx.index * delayBetweenPoints;
+                }
+            }
+        };
 
         let vaccStatistic = new Chart(vacChart, {
                 type: 'line',
@@ -101,31 +179,26 @@ let vaccDateStatistic = new Chart(vacDateChart, {
                     labels: dateVacc,
                     datasets: [
                         {
-                            label: 'Lanjut Usia',
-                            data: Vaccinated1.lansia,
-                            borderColor: '#da292e',
-                            backgroundColor: '#da292e',
+                            label: 'Vaksinasi Dosis 1',
+                            data: Vaccinated.vaksinasi1,
+                            borderColor: '#174C72',
+                            backgroundColor: '#2C4DC49C',
                         },
                         {
-                            label: 'Pekerja Publik',
-                            data: Vaccinated1.pp,
-                            borderColor: '#2fb380',
-                            backgroundColor: '#2fb380',
+                            label: 'Vaksinasi Dosis 2',
+                            data: Vaccinated.vaksinasi2,
+                            borderColor: '#228861',
+                            backgroundColor: '#2FB38087',
                         },
-                        {
-                            label: 'Tenaga Kerja Kesehatan',
-                            data: Vaccinated1.sdmk,
-                            borderColor: '#287bb5',
-                            backgroundColor: '#287bb5',
-                        }
                     ]
                 },
                 options: {
+                    animation,
                     responsive: true,
                     plugins: {
                       title: {
                         display: true,
-                        text: (vacChart) => 'Vaksinasi Tahap 1'
+                        text: (vacChart) => 'Total Vaksinasi COVID-19 di Indonesia'
                       },
                       tooltip: {
                         mode: 'index'
