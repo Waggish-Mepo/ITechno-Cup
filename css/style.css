@@ -1,5 +1,21 @@
 
 
 .hero{
-    height: 50vh;
+    height: 80vh;
+}
+
+.svg-area{
+    height: 80%;
+    width: 80%;
+    margin-top: 20px;
+    border-radius: 500px;
+    background-color: white;
+}
+
+.hero-svg{
+    width: 80%;
+}
+
+.text-orange{
+    color: #f8765f;
 }
