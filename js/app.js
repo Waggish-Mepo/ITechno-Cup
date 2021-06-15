@@ -103,20 +103,20 @@ let vaccDateStatistic = new Chart(vacDateChart, {
                         {
                             label: 'Lanjut Usia',
                             data: Vaccinated1.lansia,
-                            borderColor: 'rgba(255, 0, 0, 1)',
-                            backgroundColor: 'rgba(255, 0, 0, 1)',
+                            borderColor: '#da292e',
+                            backgroundColor: '#da292e',
                         },
                         {
                             label: 'Pekerja Publik',
                             data: Vaccinated1.pp,
-                            borderColor: 'rgba(0, 255, 0, 1)',
-                            backgroundColor: 'rgba(0, 255, 0, 1)',
+                            borderColor: '#2fb380',
+                            backgroundColor: '#2fb380',
                         },
                         {
-                            label: 'Sumber Daya Manusia Kesehatan',
+                            label: 'Tenaga Kerja Kesehatan',
                             data: Vaccinated1.sdmk,
-                            borderColor: 'rgba(0, 0, 255, 1)',
-                            backgroundColor: 'rgba(0, 0, 255, 1)',
+                            borderColor: '#287bb5',
+                            backgroundColor: '#287bb5',
                         }
                     ]
                 },
