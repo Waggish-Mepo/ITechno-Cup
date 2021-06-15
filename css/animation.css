@@ -35,15 +35,15 @@
     }
     25%{
         scale: 1.5;
-        transform: scale(1.05, 1.05) translate(0, 1%);
+        transform: scale(1.025, 1.025) translate(0, 1%);
     }
     50%{
         scale: 2;
-        transform:scale(1.1, 1.1) translate(0, 2%);
+        transform:scale(1.05, 1.05) translate(0, 2%);
     }
     75%{
         scale: 1.5;
-        transform:scale(1.05, 1.05) translate(0, 1%);
+        transform:scale(1.025, 1.025) translate(0, 1%);
     }
     100%{
         scale: 1;
@@ -52,7 +52,7 @@
 }
 
 #male-head{
-    animation: male-head 1.5s infinite linear;
+    animation: male-head 3s infinite linear;
     transform-origin: center;
     transform-box: fill-box;
 }
@@ -76,7 +76,7 @@
 }
 
 #female-head{
-    animation: female-head 1.5s infinite linear;
+    animation: female-head 3s infinite linear;
     transform-origin: center;
     transform-box: fill-box;
 }
@@ -89,7 +89,7 @@
         transform:  translate(0, 0) rotateZ(0deg);
     }
     50%{
-        transform: translate(0, 0) rotateZ(2deg);
+        transform: translate(0, 0) rotateZ(5deg);
     }
     75%{
         transform: translate(0, 0) rotateZ(0deg);
