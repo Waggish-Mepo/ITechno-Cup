@@ -86,13 +86,6 @@ let vaccDateStatistic2 = new Chart($('#vacc-date-chart2'), {
             dateSelect.append(`<option value="${data['date']}">${data['date']}</option>`);
 
             dateVacc.push(data['date']);
-            // Vaccinated1.lansia.push(data['tahapan_vaksinasi']['lansia']['sudah_vaksin1']);
-            // Vaccinated1.pp.push(data['tahapan_vaksinasi']['petugas_publik']['sudah_vaksin1']);
-            // Vaccinated1.sdmk.push(data['tahapan_vaksinasi']['sdm_kesehatan']['sudah_vaksin1']);
-
-            // Vaccinated2.lansia.push(data['tahapan_vaksinasi']['lansia']['sudah_vaksin2']);
-            // Vaccinated2.pp.push(data['tahapan_vaksinasi']['petugas_publik']['sudah_vaksin2']);
-            // Vaccinated2.sdmk.push(data['tahapan_vaksinasi']['sdm_kesehatan']['sudah_vaksin2']);
             Vaccinated.vaksinasi1.push(data['vaksinasi1']);
             Vaccinated.vaksinasi2.push(data['vaksinasi2']);
         });

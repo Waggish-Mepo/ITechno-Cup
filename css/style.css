@@ -21,7 +21,14 @@
 }
 
 #text-hero{
-    font-size: 3.3em;
+    font-size: 2.6rem;
+}
+
+.img-profile{
+    width: 75px;
+    height: 75px;
+    background-position: center;
+    background-size: 75px auto;
 }
 
 .svg-area{
