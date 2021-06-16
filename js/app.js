@@ -247,3 +247,36 @@ let vaccDateStatistic2 = new Chart($('#vacc-date-chart2'), {
     dateSelect.change(function(){
         changeData();
     });
+
+
+
+//covid 19 cases
+
+const COVIDAPIURL = `https://api.covid19api.com`;
+const totalPositive = $('#positive-case')
+const active = $('#active-case')
+const recovered = $('#recovered-case')
+const deaths = $('#deaths')
+const dateElement = $('#covid-date');
+
+fetch(`${COVIDAPIURL}/total/country/indonesia`)
+.then(response => response.json())
+.then(async json => {
+    let data = json.pop();
+    
+    let {Country, Confirmed, Deaths, Recovered, Active, Date : DataDate} = data;
+    console.log(Country, Confirmed, Deaths, Recovered, Active, DataDate);
+    let dateObject = new Date(DataDate);
+    let dayNames = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+    let day = dateObject.getDay();
+    let dateOfMonth = dateObject.getDate();
+    let month = dateObject.getMonth() + 1;
+    let year = dateObject.getFullYear();
+
+    totalPositive.html(Confirmed);
+    active.html(Active);
+    recovered.html(Recovered);
+    deaths.html(Deaths);
+    dateElement.html(`${dayNames[day]}, ${dateOfMonth}-${month}-${year}`);
+
+})
