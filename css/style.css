@@ -4,8 +4,24 @@
     margin-left: 50%;
 }
 
+.bg-teal{
+    background-color: #20c997;
+}
+
+.bg-cyan{
+    background-color: #287bb5;
+}
+
+.bg-orange{
+    background-color: #f8765f;
+}
+
 .hero{
     height: 80vh;
+}
+
+#text-hero{
+    font-size: 3.3em;
 }
 
 .svg-area{

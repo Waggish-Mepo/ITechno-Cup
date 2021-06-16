@@ -25,7 +25,7 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarColor01">
+                <div class="collapse navbar-collapse mt-2" id="navbarColor01">
                     <ul class="navbar-nav ms-auto mx-4">
                         <li class="nav-item">
                             <a class="nav-link active" href="#">Home
@@ -317,7 +317,7 @@
                 </div>
                 <div class="col">
                     <h4 class="text-center">Merasakan Gejala COVID-19? <br><b>Segera Periksa!</b></h4>
-                    <div class="diagnose-information d-flex justify-content-center">
+                    <div class="diagnose-information d-flex justify-content-center flex-wrap">
                         <div class="d-flex flex-column justify-content-center">
                             <a href="tel:119" class="btn btn-primary m-2">Call Center 119</a>
                             <a href="https://covid19.prixa.ai/" target="_blank" class="btn btn-success m-2">Periksa Sekarang</a>
@@ -525,74 +525,124 @@
 
             <div class="card text-white mb-3">
                 <div class="card-header bg-info d-flex flex-row ">
-                    Total Vaksinasi Dosis 1
-                    <p class="text-white-50 ms-2 mb-0" id="vaccine-stage-1"></p>
+                    Vaksinasi Dosis 1
+                    <p class="text-white-50 ms-2 mb-0 vaccine-date"></p>
                 </div>
-                <div class="card-body p-4">
-                    <!-- <div class="progress">
-                        <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div> -->
+                <div class="card-body p-4 d-flex flex-row flex-wrap justify-content-around">
 
-                    <div class="d-flex justify-content-around flex-row">
-                        <div class="card text-white bg-primary mb-3 text-center" style="max-width: 18rem;">
-                            <div class="card-header">Sasaran Vaksinasi Lansia</div>
-                            <div class="card-body p-4">
-                                <p class="card-text fw-bold fs-3" id="vaccine-elderly"></p>
+                    <div class="col d-flex flex-column">
+                        <div class="card text-dark bg-light mb-2" style="max-width:90%">
+                            <div class="card-header">Tahapan Vaksinasi Lansia</div>
+                            <div class="card-body row gx-5 px-1 pe-0 mx-0">
+                                <div class="col py-2">
+                                    <p class="m-0">Jumlah Penduduk</p>
+                                    <h1 class="fw-bold" id="vaccine-elderly"></h1>
+                                </div>
+                                <div class="col bg-orange text-white py-2 m-0">
+                                    <p class="m-0">Cakupan</p>
+                                    <h1 class="text-white fw-bold m-0 vaccine-percent-elderly"></h1>
+                                </div>
                             </div>
                         </div>
-                        <div class="card text-white bg-success mb-3 text-center" style="max-width: 18rem;">
-                            <div class="card-header">Sasaran Vaksinasi Petugas Publik</div>
-                            <div class="card-body p-4">
-                                <p class="card-text fw-bold fs-3" id="vaccine-public-worker"></p>
+                        <div class="card text-dark bg-light mb-2" style="max-width:90%">
+                            <div class="card-header">Tahapan Vaksinasi Petugas Publik</div>
+                            <div class="card-body row gx-5 px-1 pe-0 mx-0">
+                                <div class="col py-2">
+                                    <p class="m-0">Jumlah Penduduk</p>
+                                    <h1 class="fw-bold" id="vaccine-public-worker"></h1>
+                                </div>
+                                <div class="col bg-cyan text-white py-2 m-0">
+                                    <p class="m-0">Cakupan</p>
+                                    <h1 class="text-white fw-bold m-0 vaccine-percent-public-worker"></h1>
+                                </div>
                             </div>
                         </div>
-                        <div class="card text-white bg-info mb-3 text-center" style="max-width: 18rem;">
-                            <div class="card-header">Sasaran Vaksinasi Tenaga Kesehatan</div>
-                            <div class="card-body p-4">
-                                <p class="card-text fw-bold fs-3" id="vaccine-medic-worker"></p>
+                        <div class="card text-dark bg-light mb-2" style="max-width:90%">
+                            <div class="card-header">Tahapan Vaksinasi Tenaga Kesehatan</div>
+                            <div class="card-body row gx-5 px-1 pe-0 mx-0">
+                                <div class="col py-2">
+                                    <p class="m-0">Jumlah Penduduk</p>
+                                    <h1 class="fw-bold" id="vaccine-medic-worker"></h1>
+                                </div>
+                                <div class="col bg-teal text-white py-2 m-0">
+                                    <p class="m-0">Cakupan</p>
+                                    <h1 class="text-white fw-bold m-0 vaccine-percent-medic-worker"></h1>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-sm-4 bg-light h-50 p-4 mx-auto border border-4 rounded-3 h-50">
-                        <canvas id="vacc-date-chart"></canvas>
+                    <div class="col-md-4 bg-light h-75 border border-4 rounded-3 my-auto">
+                        <canvas class="mb-2" id="vacc-date-chart"></canvas>
+                        <h6 class="text-dark text-center">Proses vaksinasi: <span id="vaccine-percent"></span></h6>
+                        <div class="px-2">
+                            <div class="progress mb-2">
+                                <div id="vaccine-progress" class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="card text-white mb-3">
                 <div class="card-header bg-info d-flex flex-row ">
-                    Total Vaksinasi Dosis 2
-                    <p class="text-white-50 ms-2 mb-0" id="vaccine-stage-2"></p>
+                    Vaksinasi Dosis 2
+                    <p class="text-white-50 ms-2 mb-0 vaccine-date"></p>
                 </div>
-                <div class="card-body p-4">
+                <div class="card-body p-4 d-flex flex-row flex-wrap justify-content-around">
 
-                    <div class="d-flex flex-row justify-content-around">
-                        <div class="card text-white bg-primary mb-3 text-center" style="max-width: 18rem;">
-                            <div class="card-header">Sasaran Vaksinasi Lansia</div>
-                            <div class="card-body p-4">
-                                <p class="card-text fw-bold fs-3" id="vaccine-elderly2"></p>
+                    <div class="col d-flex flex-column">
+                        <div class="card text-dark bg-light mb-2" style="max-width:90%">
+                            <div class="card-header">Tahapan Vaksinasi Lansia</div>
+                            <div class="card-body row gx-5 px-1 pe-0 mx-0">
+                                <div class="col py-2">
+                                    <p class="m-0">Jumlah Penduduk</p>
+                                    <h1 class="fw-bold" id="vaccine-elderly2"></h1>
+                                </div>
+                                <div class="col bg-orange text-white py-2 m-0">
+                                    <p class="m-0">Cakupan</p>
+                                    <h1 class="text-white fw-bold m-0 vaccine-percent-elderly2"></h1>
+                                </div>
                             </div>
                         </div>
-                        <div class="card text-white bg-primary mb-3 text-center" style="max-width: 18rem;">
-                            <div class="card-header">Sasaran Vaksinasi Petugas Publik</div>
-                            <div class="card-body p-4">
-                                <p class="card-text fw-bold fs-3" id="vaccine-public-worker2"></p>
+                        <div class="card text-dark bg-light mb-2" style="max-width:90%">
+                            <div class="card-header">Tahapan Vaksinasi Petugas Publik</div>
+                            <div class="card-body row gx-5 px-1 pe-0 mx-0">
+                                <div class="col py-2">
+                                    <p class="m-0">Jumlah Penduduk</p>
+                                    <h1 class="fw-bold" id="vaccine-public-worker2"></h1>
+                                </div>
+                                <div class="col bg-cyan text-white py-2 m-0">
+                                    <p class="m-0">Cakupan</p>
+                                    <h1 class="text-white fw-bold m-0 vaccine-percent-public-worker"></h1>
+                                </div>
                             </div>
                         </div>
-                        <div class="card text-white bg-primary mb-3 text-center" style="max-width: 18rem;">
-                            <div class="card-header">Sasaran Vaksinasi Tenaga Kesehatan</div>
-                            <div class="card-body p-4">
-                                <p class="card-text fw-bold fs-3" id="vaccine-medic-worker2"></p>
+                        <div class="card text-dark bg-light mb-2" style="max-width:90%">
+                            <div class="card-header">Tahapan Vaksinasi Tenaga Kesehatan</div>
+                            <div class="card-body row gx-5 px-1 pe-0 mx-0">
+                                <div class="col py-2">
+                                    <p class="m-0">Jumlah Penduduk</p>
+                                    <h1 class="fw-bold" id="vaccine-medic-worker2"></h1>
+                                </div>
+                                <div class="col bg-teal text-white py-2 m-0">
+                                    <p class="m-0">Cakupan</p>
+                                    <h1 class="text-white fw-bold m-0 vaccine-percent-medic-worker"></h1>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-sm-4 bg-light h-50 p-4 mx-auto border border-4 rounded-3 h-50">
-                        <canvas id="vacc-date-chart2"></canvas>
+                    <div class="col-md-4 col-sm-1 bg-light h-75 border border-4 rounded-3 my-auto">
+                        <canvas class="mb-2" id="vacc-date-chart2"></canvas>
+                        <h6 class="text-dark text-center">Proses vaksinasi: <span id="vaccine-percent2"></span></h6>
+                        <div class="px-2">
+                            <div class="progress mb-2">
+                                <div id="vaccine-progress2" class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            
         </div>
 
         
