@@ -129,10 +129,10 @@ let vaccDateStatistic2 = new Chart($('#vacc-date-chart2'), {
 
                 $('.vaccine-percent-elderly').html(data['cakupan']['lansia_vaksinasi1']);
                 $('.vaccine-percent-elderly2').html(data['cakupan']['lansia_vaksinasi2']);
-                $('.vaccine-percent-public-worker').html(data['cakupan']['lansia_vaksinasi1']);
-                $('.vaccine-percent-public-worker2').html(data['cakupan']['lansia_vaksinasi2']);
-                $('.vaccine-percent-medic-worker').html(data['cakupan']['lansia_vaksinasi1']);
-                $('.vaccine-percent-medic-worker2').html(data['cakupan']['lansia_vaksinasi2']);
+                $('.vaccine-percent-public-worker').html(data['cakupan']['petugas_publik_vaksinasi1']);
+                $('.vaccine-percent-public-worker2').html(data['cakupan']['petugas_publik_vaksinasi2']);
+                $('.vaccine-percent-medic-worker').html(data['cakupan']['sdm_kesehatan_vaksinasi1']);
+                $('.vaccine-percent-medic-worker2').html(data['cakupan']['sdm_kesehatan_vaksinasi2']);
 
                 $('#vaccine-elderly').html(data['tahapan_vaksinasi']['lansia']['sudah_vaksin1']);
                 $('#vaccine-elderly2').html(data['tahapan_vaksinasi']['lansia']['sudah_vaksin2']);
