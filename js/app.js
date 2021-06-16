@@ -24,8 +24,8 @@ let vaccDateStatistic = new Chart($('#vacc-date-chart'), {
             {
                 label: '1',
                 data: [],
-                borderColor: ['rgba(255, 100, 0, 0.4)', 'rgba(255, 100, 0, 0.4)', 'rgba(150, 255, 0, 0.4)',],
-                backgroundColor: ['rgba(255, 100, 0, 0.4)', 'rgba(255, 100, 0, 0.4)', 'rgba(150, 255, 0, 0.4)', ],
+                borderColor: ['#FD927F', '#3C83B6', '#3DCAA0',],
+                backgroundColor: ['#f8765f', '#287bb5', '#20c997', ],
             },
         ]
     },
@@ -53,8 +53,8 @@ let vaccDateStatistic2 = new Chart($('#vacc-date-chart2'), {
             {
                 label: '1',
                 data: [],
-                borderColor: ['rgba(0, 0, 255, 0.4)', 'rgba(0, 0, 255, 0.4)', 'rgba(150, 255, 0, 0.4)'],
-                backgroundColor: ['rgba(0, 0, 255, 0.4)', 'rgba(0, 0, 255, 0.4)', 'rgba(150, 255, 0, 0.4)'],
+                borderColor: ['#FD927F', '#3C83B6', '#3DCAA0',],
+                backgroundColor: ['#f8765f', '#287bb5', '#20c997', ],
             },
         ]
     },
@@ -116,8 +116,23 @@ let vaccDateStatistic2 = new Chart($('#vacc-date-chart2'), {
 
         dataVaccine['monitoring'].forEach((data, index) => {
             if (data['date'] == selectedDate){
-                $('#vaccine-stage-1').html(data['vaksinasi1']);
-                $('#vaccine-stage-2').html(data['vaksinasi2']);
+                $('.vaccine-date').html(selectedDate);
+
+                $('#vaccine-percent').html(data['cakupan']['vaksinasi1']);
+                $('#vaccine-progress').attr('style',  'width:' + data['cakupan']['vaksinasi1']);
+                $('#vaccine-progress').attr('aria-valuenow', parseInt(data['cakupan']['vaksinasi1']));    
+                $('#vaccine-progress').html(data['cakupan']['vaksinasi1']);
+                $('#vaccine-percent2').html(data['cakupan']['vaksinasi2']);
+                $('#vaccine-progress2').attr('style',  'width:' + data['cakupan']['vaksinasi2']);
+                $('#vaccine-progress2').attr('aria-valuenow', parseInt(data['cakupan']['vaksinasi2']));    
+                $('#vaccine-progress2').html(data['cakupan']['vaksinasi2']);
+
+                $('.vaccine-percent-elderly').html(data['cakupan']['lansia_vaksinasi1']);
+                $('.vaccine-percent-elderly2').html(data['cakupan']['lansia_vaksinasi2']);
+                $('.vaccine-percent-public-worker').html(data['cakupan']['lansia_vaksinasi1']);
+                $('.vaccine-percent-public-worker2').html(data['cakupan']['lansia_vaksinasi2']);
+                $('.vaccine-percent-medic-worker').html(data['cakupan']['lansia_vaksinasi1']);
+                $('.vaccine-percent-medic-worker2').html(data['cakupan']['lansia_vaksinasi2']);
 
                 $('#vaccine-elderly').html(data['tahapan_vaksinasi']['lansia']['sudah_vaksin1']);
                 $('#vaccine-elderly2').html(data['tahapan_vaksinasi']['lansia']['sudah_vaksin2']);
