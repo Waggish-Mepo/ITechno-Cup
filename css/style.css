@@ -1,3 +1,7 @@
+html{
+    scroll-behavior: smooth
+}
+
 .vert-rule{
     border-left:4px solid rgba(0, 0, 0, 0.385);
     height:1.25rem;

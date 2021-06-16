@@ -155,18 +155,163 @@
 
 @keyframes left-doctor-head{
     0%{
-        transform: translate(0, 0) rotateZ(-2deg);
+        transform: translate(0, 0) rotateZ(2deg);
     }
     25%{
         transform:  translate(0, 0) rotateZ(0deg);
     }
     50%{
-        transform: translate(0, 0) rotateZ(4deg);
+        transform: translate(0, 0) rotateZ(-4deg);
     }
     75%{
         transform: translate(0, 0) rotateZ(0deg);
     }
     100%{
+        transform: translate(0, 0) rotateZ(2deg);
+    }
+}
+
+#bubble1{
+    animation: bubble1 2s infinite linear;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+@keyframes bubble1{
+    0%{
+        transform: translate(5%, 0) rotateZ(-2deg);
+    }
+    25%{
+        transform:  translate(0, 0) rotateZ(0deg);
+    }
+    50%{
+        transform: translate(-10%, 0) rotateZ(4deg);
+    }
+    75%{
+        transform: translate(0, 0) rotateZ(0deg);
+    }
+    100%{
+        transform: translate(5%, 0) rotateZ(-2deg);
+    }
+}
+
+#bubble2{
+    animation: bubble2 2s infinite linear;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+@keyframes bubble2{
+    0%{
+        transform: translate(-10%, 0) rotateZ(-3deg);
+    }
+    25%{
+        transform:  translate(0, 0) rotateZ(0deg);
+    }
+    50%{
+        transform: translate(10%, 0) rotateZ(5deg);
+    }
+    75%{
+        transform: translate(0, 0) rotateZ(0deg);
+    }
+    100%{
+        transform: translate(-10%, 0) rotateZ(-3deg);
+    }
+}
+
+#bubble3{
+    animation: bubble3 3s infinite linear;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+@keyframes bubble3{
+    0%{
+        transform: translate(-10%, 0) rotateZ(-2deg);
+    }
+    25%{
+        transform:  translate(0, -5%) rotateZ(0deg);
+    }
+    50%{
+        transform: translate(10%, 0) rotateZ(2deg);
+    }
+    75%{
+        transform: translate(0, -5%) rotateZ(0deg);
+    }
+    100%{
+        transform: translate(-10%, 0) rotateZ(-2deg);
+    }
+}
+
+#bubble4{
+    animation: bubble4 1.5s infinite linear;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+@keyframes bubble4{
+    0%{
+        transform: translate(-5%, 0) rotateZ(-2deg);
+    }
+    25%{
+        transform:  translate(0, -3%) rotateZ(0deg);
+    }
+    50%{
+        transform: translate(5%, -6%) rotateZ(2deg);
+    }
+    75%{
+        transform: translate(0, -3%) rotateZ(0deg);
+    }
+    100%{
+        transform: translate(-5%, 0) rotateZ(-2deg);
+    }
+}
+
+#wash-hand-left{
+    animation: wash-hand-left 1s infinite linear;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+@keyframes wash-hand-left{
+    0%{
         transform: translate(0, 0) rotateZ(-2deg);
+    }
+    25%{
+        transform:  translate(5%, -1%) rotateZ(0deg);
+    }
+    50%{
+        transform: translate(10%, -3%) rotateZ(2deg);
+    }
+    75%{
+        transform: translate(5%, -1%) rotateZ(0deg);
+    }
+    100%{
+        transform: translate(0, 0) rotateZ(-2deg);
+    }
+}
+
+#wash-hand-right{
+    animation: wash-hand-right 1s infinite linear;
+    animation-delay: 0.5s;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+@keyframes wash-hand-right{
+    0%{
+        transform: translate(-2%, 0) rotateZ(1deg);
+    }
+    25%{
+        transform:  translate(0%, 1%) rotateZ(0deg);
+    }
+    50%{
+        transform: translate(3%, 2%) rotateZ(-2deg);
+    }
+    75%{
+        transform: translate(0%, 1%) rotateZ(0deg);
+    }
+    100%{
+        transform: translate(-2%, 0) rotateZ(1deg);
     }
 }
