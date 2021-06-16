@@ -65,7 +65,7 @@
         transform:  translate(0, 0) rotateZ(0deg);
     }
     50%{
-        transform: translate(0, 0) rotateZ(2deg);
+        transform: translate(0, 0) rotateZ(4deg);
     }
     75%{
         transform: translate(0, 0) rotateZ(0deg);
@@ -96,5 +96,77 @@
     }
     100%{
         transform: translate(0, 0) rotateZ(-5deg);
+    }
+}
+
+#left-doctor-clipboard{
+    animation: left-clipboard 3s infinite linear;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+@keyframes left-clipboard{
+    0%{
+        transform: translate(0, 0) rotateZ(0deg);
+    }
+    25%{
+        transform:  translate(0, -3%) rotateZ(5deg);
+    }
+    50%{
+        transform: translate(0, -5%) rotateZ(10deg);
+    }
+    75%{
+        transform: translate(0, -3%) rotateZ(5deg);
+    }
+    100%{
+        transform: translate(0, 0) rotateZ(0deg);
+    }
+}
+
+#right-doctor-hand{
+    animation: right-clipboard 2s infinite linear;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+@keyframes right-clipboard{
+    0%{
+        transform: translate(0, 0) rotateZ(0deg);
+    }
+    25%{
+        transform:  translate(5%, -2%) rotateZ(-5deg);
+    }
+    50%{
+        transform: translate(10%, -4%) rotateZ(-10deg);
+    }
+    75%{
+        transform: translate(5%, -2%) rotateZ(-5deg);
+    }
+    100%{
+        transform: translate(0, 0) rotateZ(0deg);
+    }
+}
+
+#left-doctor-head{
+    animation: left-doctor-head 3s infinite linear;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+@keyframes left-doctor-head{
+    0%{
+        transform: translate(0, 0) rotateZ(-2deg);
+    }
+    25%{
+        transform:  translate(0, 0) rotateZ(0deg);
+    }
+    50%{
+        transform: translate(0, 0) rotateZ(4deg);
+    }
+    75%{
+        transform: translate(0, 0) rotateZ(0deg);
+    }
+    100%{
+        transform: translate(0, 0) rotateZ(-2deg);
     }
 }
