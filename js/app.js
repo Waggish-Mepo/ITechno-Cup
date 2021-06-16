@@ -105,8 +105,6 @@ let vaccDateStatistic2 = new Chart($('#vacc-date-chart2'), {
             $(o).text(arr[i].t);
         });
 
-        let selectedDate = $('#date-select').find(":selected").val();
-
         dataVaccine = data;
 
         changeData();
@@ -157,6 +155,30 @@ let vaccDateStatistic2 = new Chart($('#vacc-date-chart2'), {
 
     async function chartData() {
         await getData();
+
+        const vaccLength = dataVaccine['monitoring'].length - 1;
+
+        $('#vaccine-elderly-update').html($('#vaccine-elderly-update').html() + 
+            (
+                (dataVaccine['monitoring'][vaccLength]['tahapan_vaksinasi']['lansia']['sudah_vaksin1'] + dataVaccine['monitoring'][vaccLength]['tahapan_vaksinasi']['lansia']['sudah_vaksin2']) -
+                (dataVaccine['monitoring'][vaccLength - 1]['tahapan_vaksinasi']['lansia']['sudah_vaksin1'] + dataVaccine['monitoring'][vaccLength - 1]['tahapan_vaksinasi']['lansia']['sudah_vaksin2'])
+            )
+        );
+
+        $('#vaccine-public-worker-update').html($('#vaccine-public-worker-update').html() + 
+            (
+                (dataVaccine['monitoring'][vaccLength]['tahapan_vaksinasi']['petugas_publik']['sudah_vaksin1'] + dataVaccine['monitoring'][vaccLength]['tahapan_vaksinasi']['petugas_publik']['sudah_vaksin2']) -
+                (dataVaccine['monitoring'][vaccLength - 1]['tahapan_vaksinasi']['petugas_publik']['sudah_vaksin1'] + dataVaccine['monitoring'][vaccLength - 1]['tahapan_vaksinasi']['petugas_publik']['sudah_vaksin2'])
+            )
+        );
+
+        $('#vaccine-medic-worker-update').html($('#vaccine-medic-worker-update').html() + 
+            (
+                (dataVaccine['monitoring'][vaccLength]['tahapan_vaksinasi']['sdm_kesehatan']['sudah_vaksin1'] + dataVaccine['monitoring'][vaccLength]['tahapan_vaksinasi']['sdm_kesehatan']['sudah_vaksin2']) -
+                (dataVaccine['monitoring'][vaccLength - 1]['tahapan_vaksinasi']['sdm_kesehatan']['sudah_vaksin1'] + dataVaccine['monitoring'][vaccLength - 1]['tahapan_vaksinasi']['sdm_kesehatan']['sudah_vaksin2'])
+            )
+        );
+
         const vacChart = $('#vacc-chart');
         const totalDuration = 8000;
         const delayBetweenPoints = totalDuration / Vaccinated.vaksinasi1.length;

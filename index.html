@@ -493,29 +493,29 @@
         <div class="vert-rule"></div>
 
         <div class="bg-white shadow-lg px-3 py-5 rounded mb-5">
-            <div class="d-flex justify-content-evenly">
-                <div class="card border-warning mb-3" style="width: 15rem;">
+            <div class="d-flex justify-content-evenly flex-wrap">
+                <div class="card text-white bg-warning mb-3" style="width: 15rem;">
                     <div class="card-header"><i class="fas fa-head-side-cough"></i> Total Positif</div>
                     <div class="card-body">
-                        <h4 class="card-title text-center" id="positive-case"></h4>
+                        <h1 class="card-title text-center" id="positive-case"></h1>
                     </div>
                 </div>
                 <div class="card text-white bg-danger mb-3" style="width: 15rem;">
                     <div class="card-header"><i class="fas fa-viruses"></i> Kasus Aktif</div>
                     <div class="card-body">
-                        <h4 class="card-title text-center" id="active-case"></h4>
+                        <h1 class="card-title text-center" id="active-case"></h1>
                     </div>
                 </div>
                 <div class="card text-white bg-success mb-3" style="width: 15rem;">
                     <div class="card-header"><i class="fas fa-hand-holding-medical"></i> Sembuh</div>
                     <div class="card-body">
-                        <h4 class="card-title text-center" id="recovered-case"></h4>
+                        <h1 class="card-title text-center" id="recovered-case"></h1>
                     </div>
                 </div>
                 <div class="card text-white bg-dark mb-3" style="width: 15rem;">
                     <div class="card-header"><i class="fas fa-skull-crossbones"></i> Meninggal</div>
                     <div class="card-body">
-                        <h4 class="card-title text-center" id="deaths"></h4>
+                        <h1 class="card-title text-center" id="deaths"></h1>
                     </div>
                 </div>
             </div>
@@ -534,6 +534,26 @@
             <hr>
 
             <canvas id="vacc-chart" class="mb-5"></canvas>
+
+            
+            <h3 class="mb-3">
+                <i class="fas fa-syringe"></i>
+                Vaksinasi penduduk hari ini <i class="text-black-50 fs-6">(dosis vaksin yang telah diberikan ke penduduk)</i></h3>
+            <hr>
+            <div class="d-flex justify-content-evenly flex-wrap">
+                <div class="card text-light mb-3" style="width: 18rem;">
+                    <div class="bg-orange text-center pt-3"><i class="fas fa-wheelchair"></i> Vaksinasi Lanjut Usia</div>
+                    <h1 class="card-title bg-orange text-center p-4" id="vaccine-elderly-update"><span class="text-white fas fa-plus"></span> </h1>
+                </div>
+                <div class="card text-light mb-3" style="width: 18rem;">
+                    <div class="bg-cyan text-center pt-3"><i class="fas fa-briefcase"></i> Vaksinasi Pekerja Publik</div>
+                    <h1 class="card-title bg-cyan text-center p-4" id="vaccine-public-worker-update"><span class="text-white fas fa-plus"></span> </h1>
+                </div>
+                <div class="card text-light mb-3" style="width: 18rem;">
+                    <div class="bg-teal text-center pt-3"><i class="fas fa-head-side-mask"></i> Vaksinasi Tenaga Kesehatan</div>
+                    <h1 class="card-title bg-teal text-center p-4" id="vaccine-medic-worker-update"><span class="text-white fas fa-plus"></span> </h1>
+                </div>
+            </div>
         </div>
 
         <div class="vert-rule"></div>
