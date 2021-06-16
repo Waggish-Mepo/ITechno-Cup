@@ -5,6 +5,8 @@ const Vaccinated = {vaksinasi1: [], vaksinasi2: []};
 
 const maxCanvasWidth = window.matchMedia("(max-width: 700px)");
 
+AOS.init();
+
 function responsiveCanvas(width) {
     if (width.matches) {
         $('#vacc-chart').attr('height', 500);
