@@ -5,6 +5,8 @@ const Vaccinated = {vaksinasi1: [], vaksinasi2: []};
 
 const maxCanvasWidth = window.matchMedia("(max-width: 700px)");
 
+AOS.init();
+
 function responsiveCanvas(width) {
     if (width.matches) {
         $('#vacc-chart').attr('height', 500);
@@ -84,13 +86,6 @@ let vaccDateStatistic2 = new Chart($('#vacc-date-chart2'), {
             dateSelect.append(`<option value="${data['date']}">${data['date']}</option>`);
 
             dateVacc.push(data['date']);
-            // Vaccinated1.lansia.push(data['tahapan_vaksinasi']['lansia']['sudah_vaksin1']);
-            // Vaccinated1.pp.push(data['tahapan_vaksinasi']['petugas_publik']['sudah_vaksin1']);
-            // Vaccinated1.sdmk.push(data['tahapan_vaksinasi']['sdm_kesehatan']['sudah_vaksin1']);
-
-            // Vaccinated2.lansia.push(data['tahapan_vaksinasi']['lansia']['sudah_vaksin2']);
-            // Vaccinated2.pp.push(data['tahapan_vaksinasi']['petugas_publik']['sudah_vaksin2']);
-            // Vaccinated2.sdmk.push(data['tahapan_vaksinasi']['sdm_kesehatan']['sudah_vaksin2']);
             Vaccinated.vaksinasi1.push(data['vaksinasi1']);
             Vaccinated.vaksinasi2.push(data['vaksinasi2']);
         });
@@ -102,8 +97,6 @@ let vaccDateStatistic2 = new Chart($('#vacc-date-chart2'), {
             o.value = arr[i].v;
             $(o).text(arr[i].t);
         });
-
-        let selectedDate = $('#date-select').find(":selected").val();
 
         dataVaccine = data;
 
@@ -155,6 +148,30 @@ let vaccDateStatistic2 = new Chart($('#vacc-date-chart2'), {
 
     async function chartData() {
         await getData();
+
+        const vaccLength = dataVaccine['monitoring'].length - 1;
+
+        $('#vaccine-elderly-update').html($('#vaccine-elderly-update').html() + 
+            (
+                (dataVaccine['monitoring'][vaccLength]['tahapan_vaksinasi']['lansia']['sudah_vaksin1'] + dataVaccine['monitoring'][vaccLength]['tahapan_vaksinasi']['lansia']['sudah_vaksin2']) -
+                (dataVaccine['monitoring'][vaccLength - 1]['tahapan_vaksinasi']['lansia']['sudah_vaksin1'] + dataVaccine['monitoring'][vaccLength - 1]['tahapan_vaksinasi']['lansia']['sudah_vaksin2'])
+            )
+        );
+
+        $('#vaccine-public-worker-update').html($('#vaccine-public-worker-update').html() + 
+            (
+                (dataVaccine['monitoring'][vaccLength]['tahapan_vaksinasi']['petugas_publik']['sudah_vaksin1'] + dataVaccine['monitoring'][vaccLength]['tahapan_vaksinasi']['petugas_publik']['sudah_vaksin2']) -
+                (dataVaccine['monitoring'][vaccLength - 1]['tahapan_vaksinasi']['petugas_publik']['sudah_vaksin1'] + dataVaccine['monitoring'][vaccLength - 1]['tahapan_vaksinasi']['petugas_publik']['sudah_vaksin2'])
+            )
+        );
+
+        $('#vaccine-medic-worker-update').html($('#vaccine-medic-worker-update').html() + 
+            (
+                (dataVaccine['monitoring'][vaccLength]['tahapan_vaksinasi']['sdm_kesehatan']['sudah_vaksin1'] + dataVaccine['monitoring'][vaccLength]['tahapan_vaksinasi']['sdm_kesehatan']['sudah_vaksin2']) -
+                (dataVaccine['monitoring'][vaccLength - 1]['tahapan_vaksinasi']['sdm_kesehatan']['sudah_vaksin1'] + dataVaccine['monitoring'][vaccLength - 1]['tahapan_vaksinasi']['sdm_kesehatan']['sudah_vaksin2'])
+            )
+        );
+
         const vacChart = $('#vacc-chart');
         const totalDuration = 8000;
         const delayBetweenPoints = totalDuration / Vaccinated.vaksinasi1.length;
