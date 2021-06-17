@@ -80,8 +80,6 @@ let vaccDateStatistic2 = new Chart($('#vacc-date-chart2'), {
         let response = await fetch('https://cekdiri.id/vaksinasi/');
         let data = await response.json();
 
-        console.log(data['monitoring']);
-
         data['monitoring'].forEach((data, index) => {
             dateSelect.append(`<option value="${data['date']}">${data['date']}</option>`);
 
@@ -282,7 +280,6 @@ fetch(`${COVIDAPIURL}/total/country/indonesia`)
     let data = json.pop();
     
     let {Country, Confirmed, Deaths, Recovered, Active, Date : DataDate} = data;
-    console.log(Country, Confirmed, Deaths, Recovered, Active, DataDate);
     let dateObject = new Date(DataDate);
     let dayNames = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
     let day = dateObject.getDay();
