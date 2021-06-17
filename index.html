@@ -278,8 +278,8 @@
     <div class="container mt-5">
         <div class="bg-white shadow px-3 py-5 mb-5 rounded">
             <h1 class="text-center mb-5"><strong>Apa Itu COVID-19?</strong></h1>
-            <div class="d-flex bg-white mb-5">
-                <div class="w-50">
+            <div class="row bg-white mb-5">
+                <div class="col">
                     <ul class="nav nav-tabs mb-3">
                         <li class="nav-item">
                             <a class="nav-link active" data-bs-toggle="tab" href="#home">COVID-19</a>
@@ -316,7 +316,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="w-50">
+                <div class="col">
                     <h4 class="text-center">Merasakan Gejala COVID-19? <br><b>Segera Periksa!</b></h4>
                     <div class="diagnose-information d-flex justify-content-center flex-wrap">
                         <div class="d-flex flex-column justify-content-center">
@@ -629,7 +629,7 @@
         </div>
         <div class="vert-rule"></div>
         <div class="bg-white shadow-lg px-4 py-5 rounded mb-5">
-            <h3 class="text-center fw-bold mb-3">Protokol Kesehatan Pencegahan COVID-19</h3>
+            <h1 class="text-center fw-bold mb-3">Protokol Kesehatan Pencegahan COVID-19</h1>
             <p class="text-center mb-2"><span class="text-success fw-bold">Protokol Kesehatan</span> wajib dilaksanakan sebagai bentuk kesiapan kita dalam hidup berdampingan dengan <span class="text-danger fw-bold">Covid-19</span>. <br>
             Berikut panduan protokol kesehatan berdasarkan informasi dari Kementerian Kesehatan</p>
 
@@ -772,10 +772,10 @@
                 </div>
                 <div class="card-body p-4 d-flex flex-row flex-wrap justify-content-around">
 
-                    <div class="col d-flex flex-column">
-                        <div class="card text-dark bg-light mb-2" style="max-width:90%">
+                    <div class="col d-flex flex-column p-2">
+                        <div class="card text-dark bg-light mb-2 mx-0" style="width:100%">
                             <div class="card-header">Tahapan Vaksinasi Lansia</div>
-                            <div class="card-body row gx-5 px-1 pe-0 mx-0">
+                            <div class="card-body row gx-3 px-1 pe-0 mx-0">
                                 <div class="col py-2">
                                     <p class="m-0">Jumlah Penduduk</p>
                                     <h1 class="fw-bold" id="vaccine-elderly"></h1>
@@ -786,9 +786,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card text-dark bg-light mb-2" style="max-width:90%">
+                        <div class="card text-dark bg-light mb-2 mx-0" style="width:100%">
                             <div class="card-header">Tahapan Vaksinasi Petugas Publik</div>
-                            <div class="card-body row gx-5 px-1 pe-0 mx-0">
+                            <div class="card-body row gx-3 px-1 pe-0 mx-0">
                                 <div class="col py-2">
                                     <p class="m-0">Jumlah Penduduk</p>
                                     <h1 class="fw-bold" id="vaccine-public-worker"></h1>
@@ -799,9 +799,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card text-dark bg-light mb-2" style="max-width:90%">
+                        <div class="card text-dark bg-light mb-2 mx-0" style="width:100%">
                             <div class="card-header">Tahapan Vaksinasi Tenaga Kesehatan</div>
-                            <div class="card-body row gx-5 px-1 pe-0 mx-0">
+                            <div class="card-body row gx-3 px-1 pe-0 mx-0">
                                 <div class="col py-2">
                                     <p class="m-0">Jumlah Penduduk</p>
                                     <h1 class="fw-bold" id="vaccine-medic-worker"></h1>
@@ -814,12 +814,14 @@
                         </div>
                     </div>
 
-                    <div class="col-md-5 bg-light h-75 border border-4 rounded-3 my-auto">
-                        <canvas class="mb-2" id="vacc-date-chart"></canvas>
-                        <h6 class="text-dark text-center">Proses vaksinasi: <span id="vaccine-percent"></span></h6>
-                        <div class="px-2">
-                            <div class="progress mb-2">
-                                <div id="vaccine-progress" class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="col-md-4 my-auto mx-2">
+                        <div class="bg-light border border-4 rounded-3 px-1 py-2">
+                            <canvas class="mb-2 w-100" id="vacc-date-chart" style="min-width: 200px;"></canvas>
+                            <h6 class="text-dark text-center">Proses vaksinasi: <span id="vaccine-percent"></span></h6>
+                            <div class="mx-auto">
+                                <div class="progress mb-2">
+                                    <div id="vaccine-progress" class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -832,8 +834,8 @@
                 </div>
                 <div class="card-body p-4 d-flex flex-row flex-wrap justify-content-around">
 
-                    <div class="col d-flex flex-column">
-                        <div class="card text-dark bg-light mb-2" style="max-width:90%">
+                    <div class="col d-flex flex-column p-2">
+                        <div class="card text-dark bg-light mb-2 mx-0" style="width:100%">
                             <div class="card-header">Tahapan Vaksinasi Lansia</div>
                             <div class="card-body row gx-5 px-1 pe-0 mx-0">
                                 <div class="col py-2">
@@ -846,7 +848,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card text-dark bg-light mb-2" style="max-width:90%">
+                        <div class="card text-dark bg-light mb-2 mx-0" style="width:100%">
                             <div class="card-header">Tahapan Vaksinasi Petugas Publik</div>
                             <div class="card-body row gx-5 px-1 pe-0 mx-0">
                                 <div class="col py-2">
@@ -859,7 +861,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card text-dark bg-light mb-2" style="max-width:90%">
+                        <div class="card text-dark bg-light mb-2 mx-0" style="width:100%">
                             <div class="card-header">Tahapan Vaksinasi Tenaga Kesehatan</div>
                             <div class="card-body row gx-5 px-1 pe-0 mx-0">
                                 <div class="col py-2">
@@ -874,12 +876,14 @@
                         </div>
                     </div>
 
-                    <div class="col-md-5 col-sm-1 bg-light h-75 border border-4 rounded-3 my-auto">
-                        <canvas class="mb-2" id="vacc-date-chart2"></canvas>
-                        <h6 class="text-dark text-center">Proses vaksinasi: <span id="vaccine-percent2"></span></h6>
-                        <div class="px-2">
-                            <div class="progress mb-2">
-                                <div id="vaccine-progress2" class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="col-md-4 my-auto mx-2">
+                        <div class="bg-light border border-4 rounded-3 px-1 py-2">
+                            <canvas class="mb-2 w-100" id="vacc-date-chart2" style="min-width: 200px;"></canvas>
+                            <h6 class="text-dark text-center">Proses vaksinasi: <span id="vaccine-percent2"></span></h6>
+                            <div class="mx-auto">
+                                <div class="progress mb-2">
+                                    <div id="vaccine-progress2" class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -900,7 +904,7 @@
                         <span></span><i class="fas fa-first-aid"></i>
                         LawanCov.id
                     </h4>
-                    <div class="card p-3 bg-light mb-4">
+                    <div class="card p-2 bg-light mb-4">
                         <p>LawanCov.id adalah sebuah situs yang bertujuan untuk mempermudah masyarakat dalam mencari informasi dan data-data terkait COVID-19. 
                             Kami menyediakan statistik data penyebaran dan vaksinasi COVID-19 di Indonesia yang bersumber dari API 
                             <a href="https://cekdiri.id/" target="_blank" rel="noopener noreferrer">CekDiri</a> dan <a href="https://covid19api.com" target="_blank" rel="noopener noreferrer">Covid19API</a>.
@@ -912,15 +916,30 @@
                             DrawKit COVID-19 Icons: <a href="https://www.drawkit.io/product/covid-19" target="_blank" rel="noopener noreferrer">www.drawkit.io/product/covid-19</a>
                         </li>
                         <li>
-                            unDrawco Illustrations: <a href="https://undraw.co/" target="_blank" rel="noopener noreferrer">www.undraw.co</a>
+                            unDraw Illustrations: <a href="https://undraw.co/" target="_blank" rel="noopener noreferrer">www.undraw.co</a>
+                        </li>
+                        <li>
+                            FontAwesome Icons: <a href="https://fontawesome.com/" target="_blank" rel="noopener noreferrer">www.fontawesome.com</a>
+                        </li>
+                    </ul>
+                    <h4>Framework & Library</h4>
+                    <ul class="mb-4">
+                        <li>
+                            Bootstrap (Custom): <a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer">www.getbootstrap.com</a>
+                        </li>
+                        <li>
+                            GSAP: <a href="https://greensock.com/gsap/" target="_blank" rel="noopener noreferrer">www.greensock.com/gsap/</a>
+                        </li>
+                        <li>
+                            Chart.js: <a href="https://www.chartjs.org/" target="_blank" rel="noopener noreferrer">www.chartjs.org</a>
                         </li>
                     </ul>
 
                     <h4>Tim WikramaMepo</h4>
-                    <div class="row align-items-center">
-                        <div class="col card p-2 bg-light m-2 mt-0">
+                    <div class="d-flex align-items-center">
+                        <div class="card p-2 bg-light m-2 mt-0" style="width: 20rem;">
                             <div class="row align-items-center">
-                                <div class="col-sm-2">
+                                <div class="col-sm-4">
                                     <div class="rounded-circle img-profile" style="background-image: url('img/person.jpg');"></div>
                                 </div>
                                 <div class="col-auto">
@@ -928,9 +947,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col card p-2 bg-light m-2 mt-0">
+                        <div class="card p-2 bg-light m-2 mt-0" style="width: 20rem;">
                             <div class="row align-items-center">
-                                <div class="col-sm-2">
+                                <div class="col-sm-4">
                                     <div class="rounded-circle img-profile" style="background-image: url('img/person2.jpg');"></div>
                                 </div>
                                 <div class="col-auto">
