@@ -294,3 +294,5 @@ fetch(`${COVIDAPIURL}/total/country/indonesia`)
     dateElement.html(`${dayNames[day]}, ${dateOfMonth}-${month}-${year}`);
 
 })
+
+// (ง ͡ʘ ͜ʖ ͡ʘ)ง 
