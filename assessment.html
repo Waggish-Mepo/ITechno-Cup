@@ -13,14 +13,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body style="background-color: #EEF1F9;">
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="index.html">
                     <span><i class="fas fa-first-aid"></i></span>
                     LawanCov<span class="text-danger">.</span>id
                 </a>
@@ -28,28 +27,28 @@
                     aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse mt-2" id="navbarColor01">
-                    <ul class="navbar-nav ms-auto mx-4">
+                <div class="collapse navbar-collapse mt-2 bg-primary collapse-width" id="navbarColor01">
+                    <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Home
+                            <a class="nav-link text-center" href="index.html">Home
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#covid-data">Cases</a>
+                            <a class="nav-link text-center" href="index.html#covid-data">Cases</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#vaccine-data">Vaccination</a>
+                            <a class="nav-link text-center" href="index.html#vaccine-data">Vaccination</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#about">About</a>
+                            <a class="nav-link text-center" href="index.html#about">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="assessment.html">Covid-19 Assessment
+                            <a class="nav-link active text-center" href="assessment.html">Covid-19 Assessment
                                 <span class="visually-hidden">(current)</span>
                             </a>
                         </li>
                     </ul>
-                    <a href="https://vaksin.kemkes.go.id/#/vaccines"
+                    <a id="btn-etc" href="https://vaksin.kemkes.go.id/#/vaccines"
                         class="btn btn-outline-success border-3 rounded-pill text-white my-2 my-sm-0">Info
                         Selengkapnya</a>
                 </div>
@@ -79,7 +78,7 @@
             </div>
         </div>
 
-        <div id="container-quiz-end" class="text-center" style="display: none;">
+        <div id="container-quiz-end" style="display: none;">
             <div class="card m-auto mb-3" style="max-width: 30rem;">
                 <div class="card-body">
                     <h6 class="mb-0">Anda berisiko...</h6>
@@ -87,9 +86,9 @@
                     <p id="question-result-desc">ketoprak baso bakmi gado-gado batagor siomay bajigur</p>
                 </div>
             </div>
-            <div class="bg-transparent m-auto" style="max-width: 30rem;">
+            <div class="bg-transparent m-auto text-center" style="max-width: 30rem;">
                 <button id="btn-restart" class="btn btn-primary" style="max-width: 24rem; width: 85%;">Ulangi Asesmen</button>
-                <a href="#" class="btn btn-success" style="max-width: 4rem; width: 13%;"><i class="fa fa-home"></i></a>
+                <a href="index.html" class="btn btn-success" style="max-width: 4rem; width: 13%;"><i class="fa fa-home"></i></a>
             </div>
         </div>
     </div>

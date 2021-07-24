@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="css/animation.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body style="background-color: #EEF1F9;">
     <header>
@@ -23,27 +22,27 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse mt-2" id="navbarColor01">
-                    <ul class="navbar-nav ms-auto mx-4">
+                <div class="collapse navbar-collapse mt-2 bg-primary collapse-width" id="navbarColor01">
+                    <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">Home
+                            <a class="nav-link active text-center" href="#">Home
                             <span class="visually-hidden">(current)</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#covid-data">Cases</a>
+                            <a class="nav-link text-center" href="#covid-data">Cases</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#vaccine-data">Vaccination</a>
+                            <a class="nav-link text-center" href="#vaccine-data">Vaccination</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#about">About</a>
+                            <a class="nav-link text-center" href="#about">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="assessment.html">Covid-19 Assessment</a>
+                            <a class="nav-link text-center" href="assessment.html">Covid-19 Assessment</a>
                         </li>
                     </ul>
-                    <a href="https://vaksin.kemkes.go.id/#/vaccines" class="btn btn-outline-success border-3 rounded-pill text-white my-2 my-sm-0">Info Selengkapnya</a>
+                    <a id="btn-etc" href="https://vaksin.kemkes.go.id/#/vaccines" class="btn btn-outline-success border-3 rounded-pill text-white my-2 my-sm-0">Info Selengkapnya</a>
                 </div>
             </div>
         </nav>
@@ -274,9 +273,9 @@
                 </div>
         </div>
     </div>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <svg id="svg-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path fill="#3459e6" fill-opacity="1" d="M0,224L60,202.7C120,181,240,139,360,128C480,117,600,139,720,170.7C840,203,960,245,1080,234.7C1200,224,1320,160,1380,128L1440,96L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path>
-      </svg>
+    </svg>
     
     <div class="container mt-5">
         <div class="bg-white shadow px-3 py-5 mb-5 rounded">
@@ -735,7 +734,7 @@
                 </div>
             </div>
             <div class="text-center mt-2">
-                <small class="text-black-50">*Jika data bernilai 0, maka data belum diupdate</small>
+                <small class="text-black-50">*Jika data bernilai 0, maka data dari sumber belum diupdate</small>
             </div>
         </div>
 
@@ -960,7 +959,6 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="js/TimelineMax.min.js"></script>
     <script src="js/TweenMax.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/app.js"></script>
     <script src="js/animation.js"></script>
 </body>
