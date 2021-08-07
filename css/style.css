@@ -2,6 +2,14 @@ html{
     scroll-behavior: smooth
 }
 
+.fix-nav{
+    position: fixed;
+    top: 0px;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 20%);
+    z-index: 1;
+    transition: all 0.5s ease;
+}
+
 .vert-rule{
     border-left:4px solid rgba(0, 0, 0, 0.385);
     height:1.25rem;
@@ -49,4 +57,14 @@ html{
 
 .text-orange{
     color: #f8765f;
+}
+
+@media only screen and (max-width: 450px) {
+    #btn-etc {
+        width: 100%;
+    }
+
+    .collapse-width {
+        padding: 0 1rem 0 1rem;
+    }
 }

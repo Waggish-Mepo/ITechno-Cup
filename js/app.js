@@ -5,8 +5,6 @@ const Vaccinated = {vaksinasi1: [], vaksinasi2: []};
 
 const maxCanvasWidth = window.matchMedia("(max-width: 700px)");
 
-AOS.init();
-
 function responsiveCanvas(width) {
     if (width.matches) {
         $('#vacc-chart').attr('height', 500);
@@ -17,6 +15,27 @@ function responsiveCanvas(width) {
 
 responsiveCanvas(maxCanvasWidth);
 maxCanvasWidth.addListener(responsiveCanvas);
+
+const navHeight = $("nav").height();
+const vh = $(window).height();
+
+$(window).scroll(function(){
+    if (window.scrollY > $("nav").offset().top){
+        $("body").css("padding-top", (navHeight + 1));
+        $("nav").height(0)
+    } else {
+        $("nav").height(navHeight);
+    }
+// 100 * (() / vh)
+    if (window.scrollY > ($("#svg-wave").offset().top + (180 * (200 / vh)) )) {
+        $("nav").addClass('fix-nav fixed-top');
+        $("nav").height(navHeight);
+    } else{
+        $("nav").height(navHeight);
+        $("nav").removeClass('fix-nav fixed-top');
+        $("body").css("padding-top", "");
+    }
+})
 
 let vaccDateStatistic = new Chart($('#vacc-date-chart'), {
     type: 'doughnut',
@@ -294,3 +313,5 @@ fetch(`${COVIDAPIURL}/total/country/indonesia`)
     dateElement.html(`${dayNames[day]}, ${dateOfMonth}-${month}-${year}`);
 
 })
+
+// (ง ͡ʘ ͜ʖ ͡ʘ)ง 
